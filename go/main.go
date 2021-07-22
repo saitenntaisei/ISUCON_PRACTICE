@@ -270,7 +270,7 @@ type resSetting struct {
 
 func init() {
 	store = sessions.NewCookieStore([]byte("abc"))
-
+	log.Printf("Good Morning!")
 	log.SetFlags(log.Ldate | log.Ltime | log.Lshortfile)
 
 	templates = template.Must(template.ParseFiles(
@@ -279,6 +279,7 @@ func init() {
 }
 
 func main() {
+
 	host := os.Getenv("MYSQL_HOST")
 	if host == "" {
 		host = "127.0.0.1"
